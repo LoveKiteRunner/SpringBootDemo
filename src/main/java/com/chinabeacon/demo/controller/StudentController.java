@@ -6,6 +6,7 @@ import com.chinabeacon.demo.mbg.model.Student;
 import com.chinabeacon.demo.service.StudentService;
 import com.chinabeacon.demo.util.api.PageRequest;
 import io.swagger.annotations.*;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.mybatis.generator.codegen.ibatis2.sqlmap.elements.SelectByExampleWithBLOBsElementGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
