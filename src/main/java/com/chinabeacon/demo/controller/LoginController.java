@@ -1,9 +1,7 @@
 package com.chinabeacon.demo.controller;
 
 import com.chinabeacon.demo.contant.enums.LoginType;
-import com.chinabeacon.demo.contant.enums.ResultEnums;
 import com.chinabeacon.demo.mbg.dto.LoginModel;
-import com.chinabeacon.demo.mbg.model.Student;
 import com.chinabeacon.demo.mbg.model.Sysuser;
 import com.chinabeacon.demo.service.SysuserService;
 import com.chinabeacon.demo.util.api.CommonResult;
@@ -18,9 +16,6 @@ import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * 描述
@@ -63,13 +58,4 @@ public class LoginController {
         }
     }
 
-    /**
-     * 测试token登录接口
-     * @return Result
-     */
-    @PostMapping("/test")
-    @RequiresRoles("admin")
-    public  CommonResult<String>  test(){
-        return CommonResult.success("ok");
-    }
 }
