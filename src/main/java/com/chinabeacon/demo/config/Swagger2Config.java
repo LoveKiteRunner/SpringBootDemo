@@ -36,9 +36,10 @@ public class Swagger2Config {
                 .apis(RequestHandlerSelectors.basePackage("com.chinabeacon.demo.controller"))
                 .paths(PathSelectors.any())
                 .build()
+//                .globalOperationParameters(pars)
 //                //添加登录认证
-                .securitySchemes(securitySchemes())
-                .securityContexts(securityContexts())
+//                .securitySchemes(securitySchemes())
+               /* .securityContexts(securityContexts())*/
                 ;
     }
 
@@ -52,7 +53,7 @@ public class Swagger2Config {
 
     private List<ApiKey> securitySchemes() {
         List<ApiKey> apiKeyList= new ArrayList();
-        apiKeyList.add(new ApiKey("x-auth-token", "x-auth-token", "header"));
+        apiKeyList.add(new ApiKey("token", "token", "header"));
         return apiKeyList;
     }
     private List<SecurityContext> securityContexts() {

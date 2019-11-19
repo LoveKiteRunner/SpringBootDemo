@@ -27,7 +27,7 @@ public class JwtUtil {
             // 根据密码生成JWT效验器
             Algorithm algorithm = Algorithm.HMAC256(secret);
             JWTVerifier verifier = JWT.require(algorithm)
-                    .withClaim("phone", getPhone(token))
+                    .withClaim("phone", getUserId(token))
                     .withClaim("userId", getUserId(token))
                     .build();
             // 效验TOKEN
