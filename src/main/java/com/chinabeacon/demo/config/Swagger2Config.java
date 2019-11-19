@@ -37,9 +37,9 @@ public class Swagger2Config {
                 .paths(PathSelectors.any())
                 .build()
 //                .globalOperationParameters(pars)
-//                //添加登录认证
-//                .securitySchemes(securitySchemes())
-               /* .securityContexts(securityContexts())*/
+               //添加登录认证
+               .securitySchemes(securitySchemes())
+              .securityContexts(securityContexts())
                 ;
     }
 
@@ -53,7 +53,7 @@ public class Swagger2Config {
 
     private List<ApiKey> securitySchemes() {
         List<ApiKey> apiKeyList= new ArrayList();
-        apiKeyList.add(new ApiKey("token", "token", "header"));
+        apiKeyList.add(new ApiKey("authorization", "authorization", "header"));
         return apiKeyList;
     }
     private List<SecurityContext> securityContexts() {
@@ -71,7 +71,7 @@ public class Swagger2Config {
         AuthorizationScope[] authorizationScopes = new AuthorizationScope[1];
         authorizationScopes[0] = authorizationScope;
         List<SecurityReference> securityReferences=new ArrayList<>();
-        securityReferences.add(new SecurityReference("Authorization", authorizationScopes));
+        securityReferences.add(new SecurityReference("authorization", authorizationScopes));
         return securityReferences;
     }
 }

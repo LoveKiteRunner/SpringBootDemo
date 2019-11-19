@@ -28,6 +28,7 @@ public class StudentController {
 
     @ApiOperation("获取所有学生列表")
     @PostMapping("searchAllStudents")
+    @RequiresRoles("admin2")
     public CommonResult<List<Student>> searchAllStudents() throws Exception {
         return CommonResult.success(studentService.listAllStudent());
     }

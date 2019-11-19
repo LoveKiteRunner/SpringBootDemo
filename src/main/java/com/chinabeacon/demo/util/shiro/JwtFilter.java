@@ -35,7 +35,7 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
      */
     @Override
     protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) {
-        String token = ((HttpServletRequest) request).getHeader(Constant.TOKEN_HEADER_NAME);
+        String token = ((HttpServletRequest)request).getHeader(Constant.TOKEN_HEADER_NAME);
         if (token != null) {
             try {
                 executeLogin(request, response);
@@ -46,7 +46,8 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
             }
         }
         // 如果请求头不存在 Token，则可能是执行登陆操作或者是游客状态访问，无需检查 token，直接返回 true
-        return true;
+        //return true;
+        return false;
     }
  
     /**

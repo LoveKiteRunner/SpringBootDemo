@@ -17,6 +17,7 @@ import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreato
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.web.servlet.handler.SimpleMappingExceptionResolver;
 
 import javax.servlet.Filter;
@@ -159,8 +160,16 @@ public class ShiroConfig {
     }
 
     @Bean
-    public static LifecycleBeanPostProcessor getLifecycleBeanPostProcessor() {
+    public static LifecycleBeanPostProcessor lifecycleBeanPostProcessor() {
         return new LifecycleBeanPostProcessor();
-}
+   }
+
+    @Bean
+    @DependsOn({"lifecycleBeanPostProcessor"})
+    public DefaultAdvisorAutoProxyCreator advisorAutoProxyCreator(){
+        DefaultAdvisorAutoProxyCreator advisorAutoProxyCreator = new DefaultAdvisorAutoProxyCreator();
+        advisorAutoProxyCreator.setProxyTargetClass(true);
+        return advisorAutoProxyCreator;
+    }
 
 }

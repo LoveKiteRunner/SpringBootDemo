@@ -52,6 +52,7 @@ public class JwtRealm extends AuthorizingRealm {
         if (null == user) {
             return authorizationInfo;
         }
+        //todo get roles permissions from db
 // 赋予角色
       /*  List<Sysrole> roleList = roleService.listRolesByUserId(user.getId());
         for (Sysrole role : roleList) {
