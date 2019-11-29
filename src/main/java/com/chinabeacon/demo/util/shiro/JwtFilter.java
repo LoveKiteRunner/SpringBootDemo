@@ -4,7 +4,6 @@ package com.chinabeacon.demo.util.shiro;
 import com.chinabeacon.demo.contant.Constant;
 import com.chinabeacon.demo.controller.StudentController;
 import com.chinabeacon.demo.util.shiro.token.JwtToken;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.web.filter.authc.BasicHttpAuthenticationFilter;
 import org.slf4j.Logger;
@@ -23,7 +22,6 @@ import java.io.PrintWriter;
  * @author lixiao
  * @date 2019/8/5 23:46
  */
-@Slf4j
 public class JwtFilter extends BasicHttpAuthenticationFilter {
     private static final Logger LOGGER = LoggerFactory.getLogger(JwtFilter.class);
     /**

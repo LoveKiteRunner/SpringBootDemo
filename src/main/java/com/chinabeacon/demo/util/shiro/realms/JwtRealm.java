@@ -7,7 +7,6 @@ import com.chinabeacon.demo.mbg.model.Sysuser;
 import com.chinabeacon.demo.service.SysuserService;
 import com.chinabeacon.demo.util.shiro.JwtUtil;
 import com.chinabeacon.demo.util.shiro.token.JwtToken;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.Permission;
@@ -28,7 +27,6 @@ import java.util.Set;
  * @author lixiao
  * @date 2019/8/6 10:02
  */
-@Slf4j
 public class JwtRealm extends AuthorizingRealm {
 
     @Autowired

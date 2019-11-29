@@ -8,15 +8,17 @@ import com.chinabeacon.demo.util.ListHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class SysuserServiceImpl implements SysuserService {
     @Autowired
     private SysuserMapper sysuserMapper;
     @Override
     public Sysuser findByUserName(String userName) {
-        var example=new SysuserExample();
+        SysuserExample example=new SysuserExample();
         example.createCriteria().andUserNameEqualTo(userName);
-        var sysusers= sysuserMapper.selectByExample(example);
+        List<Sysuser> sysusers= sysuserMapper.selectByExample(example);
         return ListHelper.firstOrDefault(sysusers,m->true);
     }
     @Override

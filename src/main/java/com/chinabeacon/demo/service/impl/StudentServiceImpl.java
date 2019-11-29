@@ -17,7 +17,7 @@ public class StudentServiceImpl implements StudentService {
     private StudentMapper studentMapper;
     @Override
     public List<Student> listAllStudent() {
-        var example=new StudentExample();
+        StudentExample example=new StudentExample();
         example.createCriteria().andIsDeletedEqualTo(false);
         return studentMapper.selectByExample(example);
     }
@@ -37,7 +37,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public int deleteStudent(String id) {
-        var student=getStudent(id);
+        Student student=getStudent(id);
         student.setIsDeleted(true);
         student.setUpdateTime(new Date());
         return updateStudent(student);
@@ -46,7 +46,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public List<Student> listStudent(PageRequest pageRequest) {
         PageHelper.startPage(pageRequest.getPageNum(), pageRequest.getPageSize());
-        var example=new StudentExample();
+        StudentExample example=new StudentExample();
         example.createCriteria().andIsDeletedEqualTo(false);
         return studentMapper.selectByExample(example);
     }

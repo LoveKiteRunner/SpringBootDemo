@@ -2,7 +2,6 @@ package com.chinabeacon.demo.util.shiro.realms;
 
 import com.chinabeacon.demo.util.shiro.token.CustomizedToken;
 import com.chinabeacon.demo.util.shiro.token.JwtToken;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -19,7 +18,6 @@ import java.util.Collection;
  *  org.apache.shiro.authc.pam.ModularRealmAuthenticator，
  *  其中决定使用的Realm的是doAuthenticate()方法
  */
-@Slf4j
 public class UserModularRealmAuthenticator extends ModularRealmAuthenticator {
 
     @Override

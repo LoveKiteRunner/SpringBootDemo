@@ -2,7 +2,6 @@ package com.chinabeacon.demo.util.shiro.realms;
 import com.chinabeacon.demo.mbg.model.Sysuser;
 import com.chinabeacon.demo.service.SysuserService;
 import com.chinabeacon.demo.util.shiro.token.CustomizedToken;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
@@ -18,7 +17,6 @@ import java.util.logging.Logger;
  * @date 2019/7/31 11:40*/
 
 
-@Slf4j
 public class PasswordRealm extends AuthorizingRealm {
 
     @Autowired

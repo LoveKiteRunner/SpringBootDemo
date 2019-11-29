@@ -42,7 +42,7 @@ public class StudentController {
     @ApiOperation(value = "增加学生")
     @PostMapping("addStudent")
     public CommonResult<String> addStudent(@RequestBody Student student){
-        var result=studentService.createStudent(student);
+        int result=studentService.createStudent(student);
         return CommonResult.success(String.valueOf(result));
     }
 }
